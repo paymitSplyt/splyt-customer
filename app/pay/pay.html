@@ -1,0 +1,21 @@
+<div class="top">
+    <div class="merchantName">{{cart.merchantName}}</div>
+    <div class="date">{{cart.date|date:"medium"}}</div>
+    <div class="total">Total: {{cart.totalPrice | currency}}</div>
+    <div class="clearFloat"></div>
+</div>
+<div class="main">
+    <div class="paySelection">
+        <p>Please tap the users you would like to pay for:</p>
+        <div class="payBubble" ng-repeat="contact in activeContacts" ng-class="{'activePaySelection' : togglePaySelection}" ng-click="addToPayFor(contact); togglePaySelection = !togglePaySelection">
+            {{contact.prename}}
+        </div>
+        <div class="clearFloat"></div>
+        <p>Your total balance is: <span class="meBalance">{{totalMe | currency}}</span></p>
+    </div>
+</div>
+<div class="bottom clearFloat">
+    <div class="pay" ng-click="goToPay()">$</div>
+    <div class="back" ng-click="goToSplit()">&#8676;</div>
+    <div class="clearFloat"></div>
+</div>

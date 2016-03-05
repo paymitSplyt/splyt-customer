@@ -1,0 +1,28 @@
+<div class="top">
+    <div class="merchantName">{{cart.merchantName}}</div>
+    <div class="date">{{cart.date|date:"medium"}}</div>
+    <div class="total">Total: {{cart.totalPrice | currency}}</div>
+    <div class="clearFloat"></div>
+</div>
+<div class="main">
+    <div class="left">
+        <div class="item" ng-repeat="item in cart.items" ng-click="addToActiveContact(item)">
+            <div class="itemDescription">{{item.description}}</div>
+            <div class="itemAmount">{{item.amount}}</div>
+            <div class="itemPrice">{{item.price | currency}}</div>
+        </div>
+        <div class="clearFloat"></div>
+    </div>
+    <div class="right">
+        <div class="contacts">
+            <div class="contact" ng-repeat="contact in activeContacts" ng-click="setActiveContact(contact);" ng-class="{'activeContact' : contact===activeContact}">
+                {{contact.prename}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottom clearFloat">
+    <div class="pay" ng-click="goToPay()">$</div>
+    <div class="addContact"  ng-click="goToContacts()">+</div>
+    <div class="clearFloat"></div>
+</div>

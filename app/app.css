@@ -1,0 +1,203 @@
+/* app css stylesheet */
+
+body{
+  background-color:#5f9ea0;
+  color:white;
+  height:900px;
+  width:500px;
+}
+
+.main{
+  padding-top:10px;
+}
+
+.top{
+  background-color:#ffffff;
+  color:#518687;
+  padding: 10px 10px 0px 10px;
+  height:90px;
+
+}
+
+.bottom{
+  background-color:#71BCBC;
+  padding: 10px 10px 0px 10px;
+  height:90px;
+}
+
+.merchantName{
+  font-size:30px;
+  font-weight:bold;
+}
+
+.date{
+  font-size:20px;
+  float:left;
+}
+
+.total{
+  font-size:20px;
+  text-align:center;
+}
+
+.left{
+  overflow:auto;
+  overflow-x: hidden;
+  float:left;
+  width:65%;
+  height:680px;
+}
+
+.item{
+  padding-left:10px;
+  height:30px;
+  line-height:30px;
+  font-size: 15px;
+  font-family: Roboto, sans-serif;
+  border-radius: 15px;
+  margin-bottom:2px;
+  background-color:#68ACAD;
+}
+
+.item:hover{
+  background-color:#77C4C4;
+}
+
+.right{
+  width:25%;
+  float:right;
+  overflow:auto;
+}
+
+.contact{
+  background-color: #AEE5E5;
+  min-width:50px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-bottom:5px;
+  height:40px;
+  color:#5f9ea0;
+  font-size:20px;
+  display:inline-block;
+  text-align:right;
+  float:right;
+  padding:0 10px 0 20px;
+  clear:right;
+  font-weight:bold;
+  line-height:40px;
+}
+
+.pay, .addContact, .back{
+  background-color: #AEE5E5;
+  font-size:30px;
+  width:80px;
+  height:40px;
+  color:#5f9ea0;
+  border-radius: 20px;
+  text-align:center;
+  font-weight:bold;
+  line-height:40px;
+  float:right;
+  margin-right:10px;
+  margin-top:10px;
+}
+
+.pay:hover, .back:hover, .addContact:hover, .contact:hover, .contactBook:hover{
+  background-color: #FFFFFF;
+}
+
+.activeContact{
+  background-color:#FFFFFF;
+}
+
+.itemDescription{
+  width:60%;
+  float:left;
+}
+
+.itemAmount{
+  width:10%;
+  float:left;
+}
+
+.itemPrice{
+  width:20%;
+  float:left;
+  text-align:right;
+}
+
+.clearFloat{
+  clear: both;
+}
+
+.contactPrename{
+  width:30%;
+  float:left;
+}
+
+.contactName{
+  width:30%;
+  float:left;
+}
+
+.contactNumber{
+  width:40%;
+  float:left;
+  text-align:right;
+}
+
+.contactBookPrename{
+  width:25%;
+  float:left;
+  margin-left:10px;
+}
+
+.contactBookName{
+  width:25%;
+  float:left;
+}
+
+.contactBookNumber{
+  float:left;
+  text-align:right;
+}
+
+.contactBook{
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #cccccc;
+  height:30px;
+  color:#444444;
+  font-size:15px;
+  line-height:30px;
+}
+
+.contactBook:hover{
+  background-color:#eaeaea;
+}
+
+.paySelection{
+  text-align:center;
+}
+
+.payBubble{
+  float:left;
+  height:100px;
+  width:100px;
+  text-align:center;
+  border-radius:50px;
+  line-height:100px;
+  font-size:20px;
+  font-weight:bold;
+  color:#ffffff;
+  margin:12px;
+  background-color:#518687;
+}
+
+.payBubble:hover{
+  background-color:#77C4C4;
+}
+
+.activePaySelection{
+  background-color:#ffffff;
+  color:#518687;
+}
