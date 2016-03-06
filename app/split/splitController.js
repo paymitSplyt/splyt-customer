@@ -2,8 +2,6 @@
 
 angular.module('myApp')
 
-
-
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/split', {
             templateUrl: 'split/split.html',
@@ -11,7 +9,12 @@ angular.module('myApp')
         });
     }])
 
-    .controller('SplitController', ["$scope", "$rootScope", "$location", "$http", "cartService", function ($scope, $rootScope, $location, $http, cartService) {
+    .controller('SplitController', ["$scope", "$route", "$rootScope", "$location", "$http", "notificationService", "cartService", function ($scope, $route, $rootScope, $location, $http, notificationService, cartService) {
+        notificationService.receiveNotification(function () {
+            console.log("a");
+            $route.reload();
+        });
+
         $scope.loadCart = function () {
             if($rootScope.activeContact){
                 $scope.cart = cartService.getCart($scope.cartId, $rootScope.activeContact.number.substr(1));
