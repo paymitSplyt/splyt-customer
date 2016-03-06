@@ -1,7 +1,7 @@
 <div class="top">
-    <div class="merchantName">{{cart.merchantName}}</div>
+    <div class="merchantName">{{cart.merchantName}}&nbsp;</div>
     <div class="date">{{cart.date|date:"medium"}}</div>
-    <div class="total">Total: {{cart.totalPrice | currency}}</div>
+    <div class="total">Total: {{cart.totalPrice | currency}} / Open: {{cart.totalPrice-cart.paidPrice | currency}}</div>
     <div class="clearFloat"></div>
 </div>
 <div class="main">
