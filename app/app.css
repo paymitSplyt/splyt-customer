@@ -183,6 +183,10 @@ input{
   color:#518687;
 }
 
+button{
+  color:#444444;
+}
+
 .payBubble{
   float:left;
   height:100px;

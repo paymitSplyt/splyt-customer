@@ -35,9 +35,16 @@ angular.module('myApp')
             if ($rootScope.activeContact == null) return;
             //add item to activeContact
             console.log("adding "+item.description+" to "+$rootScope.activeContact.prename);
-            cartService.postItemToUser(item.id, $rootScope.activeContact.number.substr(1)).$promise.then(function(){
-                $scope.loadCart();
-            });
+            if(item.userAmount == 0){
+                cartService.postItemToUser(item.id, $rootScope.activeContact.number.substr(1)).$promise.then(function(){
+                    $scope.loadCart();
+                });
+            } else {
+                cartService.putItemToUser(item.id, $rootScope.activeContact.number.substr(1), item.userAmount+1).$promise.then(function(){
+                    $scope.loadCart();
+                });
+            }
+
         }
 
 

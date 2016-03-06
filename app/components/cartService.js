@@ -11,8 +11,12 @@ angular
                 return $resource(url).get();
             },
             postItemToUser: function (itemId, phoneNumber){
-                var url = baseUrl+"/Item/"+itemId+"/User/"+phoneNumber;
+                var url = baseUrl+"Item/"+itemId+"/User/"+phoneNumber;
                 return $resource(url).save();
+            },
+            putItemToUser: function (itemId, phoneNumber, amount){
+                var url = baseUrl+"Item/"+itemId+"/User/"+phoneNumber+"/amount/"+amount;
+                return $resource(url, {}, {put:{method:"put"}}).put();
             }
         };
     }]);
