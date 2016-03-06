@@ -179,6 +179,10 @@ body{
   text-align:center;
 }
 
+input{
+  color:#518687;
+}
+
 .payBubble{
   float:left;
   height:100px;
