@@ -1,5 +1,16 @@
-Select user <select ng-model="userId">
-    <option ng-repeat="contact in contacts" value="{{contact.id}}">{{contact.prename}} {{contact.name}}, {{contact.number}}</option>
+<div class="top">
+    <div class="merchantName">Splyt Mockup Entry Page</div>
+</div>
+<div class="main">
+    <label class="entryLabel">Select user</label><select class="selectUser" ng-model="userId">
+    <option class="userRecord" ng-repeat="contact in contacts" value="{{contact.id}}">{{contact.prename}} {{contact.name}}, {{contact.number}}</option>
 </select><br/>
-Bill number <input type="number" ng-model="cartId"/><br/><br/>
-<button type="button" ng-click="goToSplit()">GoToSplit</button>
+    <label class="entryLabel">Bill number</label><input class="billNumber" type="number" ng-model="cartId"/><br/><br/>
+    <div class="error">{{errorMessage}}</div>
+    <button type="button" class="entryButton" ng-click="goToSplit()">GoToSplit</button>
+</div>
+<div class="bottom clearFloat center">
+    <div>For SIX Hackathon 2016</div>
+</div>
+
+

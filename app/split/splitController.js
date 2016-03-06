@@ -20,7 +20,6 @@ angular.module('myApp')
             for(var j=0;j<$rootScope.activeContacts.length;j++){
                 activePhoneNumbers.push($rootScope.activeContacts[j].number)
             }
-            console.log(activePhoneNumbers);
 
             cartService.getUsers($scope.cartId).$promise.then(function(data){
                 for(var i=0;i<data.length;i++){
@@ -28,7 +27,6 @@ angular.module('myApp')
                         for(var k=0;k<$rootScope.contacts.length;k++){
                             if($rootScope.contacts[k].number===data[i]){
                                 $rootScope.activeContacts.push($rootScope.contacts[k]);
-                                console.log("added "+$rootScope.contacts[k].number);
                             }
                         }
                     }
@@ -59,7 +57,6 @@ angular.module('myApp')
             //only works if someone is set as activeContact
             if ($rootScope.activeContact == null) return;
             //add item to activeContact
-            console.log("adding "+item.description+" to "+$rootScope.activeContact.prename);
             if(item.userAmount == 0){
                 cartService.postItemToUser(item.id, $rootScope.activeContact.number).$promise.then(function(){
                     $scope.loadCart();

@@ -6,7 +6,7 @@ angular.module('myApp')
         $routeProvider.when('/pay', {
             templateUrl: 'pay/pay.html',
             controller: 'PayController'
-        });
+        })
     }])
 
     .controller('PayController', ["$scope", "$rootScope", "contactsService", "cartService", "$location", function($scope, $rootScope, contactsService, cartService, $location) {
@@ -49,4 +49,14 @@ angular.module('myApp')
         $scope.goToSplit = function(){
             $location.path("/split");
         };
+
+        $scope.doPay = function(){
+            var contactsToPayFor = Array();
+            for(var i=0; i<$scope.toPayFor.length;i++){
+                contactsToPayFor.push($scope.toPayFor[i].number);
+            }
+            console.log("issue payment request for the following users "+contactsToPayFor)
+            cartService.postPay($scope.cartId, contactsToPayFor);
+            $location.path("/done");
+        }
     }]);

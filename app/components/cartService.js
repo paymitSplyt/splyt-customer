@@ -25,6 +25,10 @@ angular
             putItemToUser: function (itemId, phoneNumber, amount){
                 var url = baseUrl+"Item/"+itemId+"/User/"+phoneNumber+"/amount/"+amount;
                 return $resource(url, {}, {put:{method:"put"}}).put();
+            },
+            postPay: function (cartId, contactsToPayFor){
+                var url = baseUrl + cartId + "/pay";
+                return $resource(url).save(contactsToPayFor);
             }
         };
     }]);

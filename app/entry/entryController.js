@@ -23,10 +23,17 @@ angular.module('myApp')
             $rootScope.activeContacts.push($rootScope.me);
             $rootScope.activeContact=$rootScope.me;
         }
+
+        $scope.errorMessage = "";
+
         $scope.goToSplit = function(){
             $scope.setMe();
             $rootScope.userId = $scope.userId;
             $rootScope.cartId = $scope.cartId;
+            if(!$scope.userId){
+                $scope.errorMessage = "Please select a user!"
+                return;
+            }
             $location.path("/split");
         };
         $scope.loadContacts = function () {

@@ -1,10 +1,16 @@
 /* app css stylesheet */
 
 body{
+  background-color:black;
+  padding:20px 50px 20px 50px;
+}
+
+.container{
   background-color:#5f9ea0;
   color:white;
   height:900px;
   width:500px;
+  position:relative;
 }
 
 .main{
@@ -21,8 +27,11 @@ body{
 
 .bottom{
   background-color:#71BCBC;
-  padding: 10px 10px 0px 10px;
-  height:90px;
+  padding:10px;
+  height:70px;
+  width:480px;
+  position:absolute;
+  bottom:0px;
 }
 
 .merchantName{
@@ -45,7 +54,7 @@ body{
   overflow-x: hidden;
   float:left;
   width:65%;
-  height:680px;
+  height:780px;
 }
 
 .item{
@@ -54,9 +63,14 @@ body{
   line-height:30px;
   font-size: 15px;
   font-family: Roboto, sans-serif;
-  border-radius: 15px;
-  margin-bottom:2px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin:0 0 2px 0px;
   background-color:#68ACAD;
+}
+
+.hasItem{
+  background-color:#76C1C1;
 }
 
 .item:hover{
@@ -87,7 +101,7 @@ body{
   line-height:40px;
 }
 
-.pay, .addContact, .back{
+.pay, .advance, .addContact, .back{
   background-color: #AEE5E5;
   font-size:30px;
   width:80px;
@@ -102,7 +116,11 @@ body{
   margin-top:10px;
 }
 
-.pay:hover, .back:hover, .addContact:hover, .contact:hover, .contactBook:hover{
+.pay {
+  font-size:22px;
+}
+
+.pay:hover, .advance:hover, .back:hover, .addContact:hover, .contact:hover, .contactBook:hover{
   background-color: #FFFFFF;
 }
 
@@ -222,4 +240,58 @@ button{
 .activePaySelection{
   background-color:#ffffff;
   color:#518687;
+}
+
+.entryLabel{
+  margin-left:20px;
+  width:150px;
+  font-weight:bold;
+  display: inline-block;
+}
+
+.entryButton{
+  margin-left:170px;
+  margin-bottom:20px;
+}
+
+.center{
+  text-align:center;
+}
+
+.billNumber{
+  width:296px;
+  height:25px;
+  font-size:15px;
+  padding:0px;
+}
+
+.selectUser{
+  width:300px;
+  margin-bottom:10px;
+  height:25px;
+  font-size:15px;
+  padding:0px;
+}
+
+.userRecord{
+  font-size:15px;
+  padding:0px;
+}
+
+.error{
+  color:#FF5555;
+  font-weight:bold;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.white{
+  border-bottom: 1px solid #cccccc;
+}
+
+.thankYou{
+  text-align:center;
+  font-weight:bold;
+  font-size:30px;
+  margin:50px 20px 0 20px;
 }
