@@ -10,6 +10,14 @@ angular
                 if (phoneNumber) url += "/User/"+phoneNumber;
                 return $resource(url).get();
             },
+            getUsers: function (cartId) {
+                var url = baseUrl + cartId + "/Users";
+                return $resource(url).query();
+            },
+            getUserBalance: function (cartId, phoneNumber) {
+                var url = baseUrl + cartId + "/balance/" + phoneNumber;
+                return $resource(url).get();
+            },
             postItemToUser: function (itemId, phoneNumber){
                 var url = baseUrl+"Item/"+itemId+"/User/"+phoneNumber;
                 return $resource(url).save();

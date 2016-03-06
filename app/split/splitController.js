@@ -11,18 +11,40 @@ angular.module('myApp')
 
     .controller('SplitController', ["$scope", "$route", "$rootScope", "$location", "$http", "notificationService", "cartService", function ($scope, $route, $rootScope, $location, $http, notificationService, cartService) {
         notificationService.receiveNotification(function () {
-            console.log("a");
-            $route.reload();
+            $scope.loadCart();
+            $scope.loadActiveUsers();
         });
+
+        $scope.loadActiveUsers = function(){
+            var activePhoneNumbers = Array();
+            for(var j=0;j<$rootScope.activeContacts.length;j++){
+                activePhoneNumbers.push($rootScope.activeContacts[j].number)
+            }
+            console.log(activePhoneNumbers);
+
+            cartService.getUsers($scope.cartId).$promise.then(function(data){
+                for(var i=0;i<data.length;i++){
+                    if($.inArray(data[i],activePhoneNumbers)<0){
+                        for(var k=0;k<$rootScope.contacts.length;k++){
+                            if($rootScope.contacts[k].number===data[i]){
+                                $rootScope.activeContacts.push($rootScope.contacts[k]);
+                                console.log("added "+$rootScope.contacts[k].number);
+                            }
+                        }
+                    }
+                }
+            });
+        }
 
         $scope.loadCart = function () {
             if($rootScope.activeContact){
-                $scope.cart = cartService.getCart($scope.cartId, $rootScope.activeContact.number.substr(1));
+                $scope.cart = cartService.getCart($scope.cartId, $rootScope.activeContact.number);
             } else {
                 $scope.cart = cartService.getCart($scope.cartId);
             }
         };
         $scope.loadCart();
+        $scope.loadActiveUsers();
         $scope.goToContacts = function(){
             $location.path("/contacts");
         };
@@ -39,11 +61,11 @@ angular.module('myApp')
             //add item to activeContact
             console.log("adding "+item.description+" to "+$rootScope.activeContact.prename);
             if(item.userAmount == 0){
-                cartService.postItemToUser(item.id, $rootScope.activeContact.number.substr(1)).$promise.then(function(){
+                cartService.postItemToUser(item.id, $rootScope.activeContact.number).$promise.then(function(){
                     $scope.loadCart();
                 });
             } else {
-                cartService.putItemToUser(item.id, $rootScope.activeContact.number.substr(1), item.userAmount+1).$promise.then(function(){
+                cartService.putItemToUser(item.id, $rootScope.activeContact.number, item.userAmount+1).$promise.then(function(){
                     $scope.loadCart();
                 });
             }

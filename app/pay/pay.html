@@ -7,11 +7,11 @@
 <div class="main">
     <div class="paySelection">
         <p>Please tap the users you would like to pay for:</p>
-        <div class="payBubble" ng-repeat="contact in activeContacts" ng-class="{'activePaySelection' : togglePaySelection}" ng-click="addToPayFor(contact); togglePaySelection = !togglePaySelection">
-            {{contact.prename}}
+        <div class="payBubble" ng-repeat="contact in activeContacts" ng-class="{'activePaySelection' : togglePaySelection || contact===me}" ng-click="toogleToPayFor(contact); togglePaySelection = !togglePaySelection">
+            {{contact.prename}}<div class="payBalance">{{contact.balance | currency}}</div>
         </div>
         <div class="clearFloat"></div>
-        <p>Your total balance is: <span class="meBalance">{{totalMe | currency}}</span></p>
+        <p>Your total balance is: <span class="meBalance">{{totalBalance | currency}}</span></p>
     </div>
 </div>
 <div class="bottom clearFloat">

@@ -179,8 +179,17 @@ body{
   text-align:center;
 }
 
-input{
+input, select{
   color:#518687;
+}
+
+.itemDisabled{
+  background-color:#558E8E;
+  color:#69AEAF;
+}
+
+.itemDisabled:hover{
+  background-color:#558E8E;
 }
 
 button{
@@ -189,11 +198,11 @@ button{
 
 .payBubble{
   float:left;
-  height:100px;
+  height:75px;
   width:100px;
   text-align:center;
   border-radius:50px;
-  line-height:100px;
+  padding-top:25px;
   font-size:20px;
   font-weight:bold;
   color:#ffffff;
@@ -203,6 +212,11 @@ button{
 
 .payBubble:hover{
   background-color:#77C4C4;
+}
+
+.payBalance{
+  font-size:15px;
+  font-weight:normal;
 }
 
 .activePaySelection{

@@ -10,10 +10,21 @@ angular.module('myApp')
     }])
 
     .controller('EntryController', ["$scope", "$rootScope", "contactsService", "$location", function($scope, $rootScope, contactsService, $location) {
-        //initialize and populate inpus
-        $scope.userId = 41799876543;
+        //preset cartId
         $scope.cartId = 1;
+        $scope.setMe = function(){
+            for(var i=0; i<$rootScope.contacts.length; i++){
+                if($rootScope.contacts[i].id == $scope.userId){
+                    $rootScope.contacts[i].prename = "Me";
+                    $rootScope.me=$rootScope.contacts[i];
+                    break;
+                }
+            }
+            $rootScope.activeContacts.push($rootScope.me);
+            $rootScope.activeContact=$rootScope.me;
+        }
         $scope.goToSplit = function(){
+            $scope.setMe();
             $rootScope.userId = $scope.userId;
             $rootScope.cartId = $scope.cartId;
             $location.path("/split");
@@ -26,6 +37,5 @@ angular.module('myApp')
         };
         $rootScope.activeContacts = new Array();
         $rootScope.activeContact = null;
-        $rootScope.me={"id": "999", "prename": "Me", "name": "", "number":"+41799876543", "picture":"pictures/pic1.jpg"};
         $scope.loadContacts();
     }]);

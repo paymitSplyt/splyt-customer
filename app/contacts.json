@@ -1,15 +1,15 @@
 {
   "contacts":
   [
-    { "id": "0", "prename": "Michael", "name": "Loosli", "number":"+41791231211", "picture":"pictures/pic1.jpg"},
-    { "id": "1", "prename": "Thomas", "name": "Moser", "number":"+41791231212", "picture":"pictures/pic1.jpg"},
-    { "id": "2", "prename": "Stefan", "name": "Meier", "number":"+41791231213", "picture":"pictures/pic1.jpg"},
-    { "id": "3", "prename": "Leonie", "name": "Germann", "number":"+41791231214", "picture":"pictures/pic1.jpg"},
-    { "id": "4", "prename": "Marco", "name": "Schlatter", "number":"+41791231215", "picture":"pictures/pic1.jpg"},
-    { "id": "5", "prename": "Sarah", "name": "Kummer", "number":"+41791231216", "picture":"pictures/pic1.jpg"},
-    { "id": "6", "prename": "Michelle", "name": "Fisler", "number":"+41791231217", "picture":"pictures/pic1.jpg"},
-    { "id": "7", "prename": "Daniel", "name": "Marti", "number":"+41791231218", "picture":"pictures/pic1.jpg"},
-    { "id": "8", "prename": "Sandro", "name": "Bacher", "number":"+41791231219", "picture":"pictures/pic1.jpg"},
-    { "id": "9", "prename": "Mathias", "name": "Wyrsch", "number":"+41791231220", "picture":"pictures/pic1.jpg"}
+    { "id": "0", "prename": "Michael", "name": "Loosli", "number":41791231211, "picture":"pictures/pic1.jpg"},
+    { "id": "1", "prename": "Thomas", "name": "Moser", "number":41791231212, "picture":"pictures/pic1.jpg"},
+    { "id": "2", "prename": "Stefan", "name": "Meier", "number":41791231213, "picture":"pictures/pic1.jpg"},
+    { "id": "3", "prename": "Leonie", "name": "Germann", "number":41791231214, "picture":"pictures/pic1.jpg"},
+    { "id": "4", "prename": "Marco", "name": "Schlatter", "number":41791231215, "picture":"pictures/pic1.jpg"},
+    { "id": "5", "prename": "Sarah", "name": "Kummer", "number":41791231216, "picture":"pictures/pic1.jpg"},
+    { "id": "6", "prename": "Michelle", "name": "Fisler", "number":41791231217, "picture":"pictures/pic1.jpg"},
+    { "id": "7", "prename": "Daniel", "name": "Marti", "number":41791231218, "picture":"pictures/pic1.jpg"},
+    { "id": "8", "prename": "Sandro", "name": "Bacher", "number":41791231219, "picture":"pictures/pic1.jpg"},
+    { "id": "9", "prename": "Mathias", "name": "Wyrsch", "number":41791231220, "picture":"pictures/pic1.jpg"}
   ]
 }

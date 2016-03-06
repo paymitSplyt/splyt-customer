@@ -6,7 +6,7 @@
 </div>
 <div class="main">
     <div class="left">
-        <div class="item" ng-repeat="item in cart.items" ng-click="addToActiveContact(item)">
+        <div class="item" ng-repeat="item in cart.items" ng-click="addToActiveContact(item)" ng-class="{'itemDisabled' : item.selectedAmount==item.amount}">
             <div class="itemDescription">{{item.description}}</div>
             <div class="itemAmount">{{item.userAmount}}/{{item.amount}}</div>
             <div class="itemPrice">{{item.price | currency}}</div>

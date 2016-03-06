@@ -1,3 +1,5 @@
-Select user <input type="number" ng-model="userId"/><br/>
+Select user <select ng-model="userId">
+    <option ng-repeat="contact in contacts" value="{{contact.id}}">{{contact.prename}} {{contact.name}}, {{contact.number}}</option>
+</select><br/>
 Bill number <input type="number" ng-model="cartId"/><br/><br/>
 <button type="button" ng-click="goToSplit()">GoToSplit</button>
